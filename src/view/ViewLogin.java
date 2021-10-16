@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 
 public class ViewLogin {
 
-	private JFrame frame;
+	private JFrame frmEstacionamentoTruepark;
 	private JTextField txtLogin;
 	private JPasswordField txtSenha;
 
@@ -33,7 +33,7 @@ public class ViewLogin {
 			public void run() {
 				try {
 					ViewLogin window = new ViewLogin();
-					window.frame.setVisible(true);
+					window.frmEstacionamentoTruepark.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -52,13 +52,14 @@ public class ViewLogin {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 610, 453);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(new BorderLayout(0, 0));
+		frmEstacionamentoTruepark = new JFrame();
+		frmEstacionamentoTruepark.setTitle("Estacionamento TruePark");
+		frmEstacionamentoTruepark.setBounds(100, 100, 610, 453);
+		frmEstacionamentoTruepark.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmEstacionamentoTruepark.getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
-		frame.getContentPane().add(panel);
+		frmEstacionamentoTruepark.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Login");
