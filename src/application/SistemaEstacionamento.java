@@ -1,15 +1,24 @@
 package application;
-import entities.Usuario;
-import entities.Veiculo;
-import utils.ValorEstacionamento;
+
+
+import statement.ConexaoBancoDeDados2;
 
 public class SistemaEstacionamento {
-	
-	private String modelo;
-	private String placa;
-	String nome, login, senha;
 
-	Usuario usuario = new Usuario(nome, login, senha);
-	Veiculo veiculo = new Veiculo(modelo, placa);
-	
+	public static void main(String[] args) {
+
+		ConexaoBancoDeDados2 conexaoBDD = new ConexaoBancoDeDados2();
+		
+		String login = "admin";
+		String senha = "123456";
+
+		if (conexaoBDD.checkLogin2(login, senha) == true) {
+			System.out.println("retorno verdadeiro");
+		}
+		else {
+			System.out.println("retorno falso");
+		}
+		System.out.println();
+	}
+
 }
