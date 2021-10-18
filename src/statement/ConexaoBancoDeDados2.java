@@ -7,7 +7,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import entities.Usuario;
 import entities.Veiculo;
@@ -115,7 +118,7 @@ public class ConexaoBancoDeDados2 {
 					result = st.executeQuery(instrucaoSQL);
 					
 					while(result.next()) {
-					if (login == "admin" && senha == result.getString(4).intern()) {
+					if (login.intern() == "admin" && senha.intern() == result.getString(4).intern()) {
 						return true;
 					}
 					}
@@ -151,9 +154,43 @@ public class ConexaoBancoDeDados2 {
 		}
 		
 		public void CadastrarNovoUsuario(String usuario, String login, String senha) {
+			String instrucaoSQL = "insert into tbl_usuario('usuario', 'login', 'senha') VALUES (";
 			
+			try{
+				AbrirConexao();
+				System.out.println("Inserindo novo usuário... ");
+				st = conexao.createStatement();
+				instrucaoSQL = instrucaoSQL + "'" + usuario.toString() + "', '" + login.toString() + "', '" + senha.toString() + "')";
+				result = st.executeQuery(instrucaoSQL);
+				
+			FecharConexao();
+			}catch (Exception ex) {
+				System.out.println("Erro: " + ex.toString());
+			}
+			
+		}	
+		
+		public void CadastrarNovoVeiculo(Veiculo veiculo) {
+			
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy - HH:mm:ss");
+			Date date = new Date();
+			try{
+				AbrirConexao();
+				System.out.println("Inserindo novo veículo... ");
+				st = conexao.createStatement();
+				String instrucaoSQL = "insert into tbl_movimentacao('placa', 'modelo', 'data_entrada') VALUES ('"
+									  +  veiculo.getPlaca()
+									  + "', '" + veiculo.getModelo()
+									  + "', '" + dateFormat.format(date)
+									  + "')";
+				result = st.executeQuery(instrucaoSQL + "'" + veiculo.getPlaca() );
+				
+			FecharConexao();
+			}catch (Exception ex) {
+				System.out.println("Erro: " + ex.toString());
+			}
 			
 		}
-		
+
 
 }

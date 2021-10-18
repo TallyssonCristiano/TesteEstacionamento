@@ -10,6 +10,10 @@ import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Button;
+import javax.swing.JPanel;
+import java.awt.event.ContainerAdapter;
+import java.awt.event.ContainerEvent;
+import javax.swing.JToolBar;
 
 public class TelaCadastroUsuario {
 

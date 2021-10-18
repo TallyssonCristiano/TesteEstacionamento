@@ -105,6 +105,14 @@ public class ViewLogin {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (conexaoBDD.checkAdmin(txtLogin.getText(), new String(txtSenha.getPassword()))) {
+					{	
+						JOptionPane.showMessageDialog(null, "Acesso administrador concedido!");
+					}
+					}
+					else{
+					{
+						JOptionPane.showMessageDialog(null, "Dados incorretos, entre em contato com o administrador!");
+					}
 				}
 				
 			}
