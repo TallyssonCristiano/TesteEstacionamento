@@ -81,10 +81,23 @@ public class Veiculo {
 	}
 	
 	public String toString() {
-		return "Veículo "
+		return 	"Código: "
+				+ id
+				+", Veículo "
 				+ modelo
 				+ ", Placa: "
-				+ placa;
+				+ placa
+				+ ", Data de entrada: "
+				+ dataEntrada
+				+ ", Data de saída: "
+				+ dataSaida
+				+ ", Tempo estacionado: "
+				+ tempo
+				+ ", Valor pago: R$ "
+				+ valorPago
+				+ ",00";
+				
+				
 	}
 	
 	

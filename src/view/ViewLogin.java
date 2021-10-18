@@ -55,6 +55,7 @@ public class ViewLogin {
 	private void initialize() {
 		
 		ConexaoBancoDeDados2 conexaoBDD = new ConexaoBancoDeDados2();
+		
 		frmEstacionamentoTruepark = new JFrame();
 		frmEstacionamentoTruepark.setTitle("Estacionamento TruePark");
 		frmEstacionamentoTruepark.setBounds(100, 100, 610, 453);
@@ -82,17 +83,18 @@ public class ViewLogin {
 		txtSenha.setBounds(120, 252, 316, 41);
 		loginPanel.add(txtSenha);
 		
-		String login = txtLogin.getText();
-		String senha = new String(txtSenha.getPassword());
-		
 		btnNewButton = new JButton("Acessar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(conexaoBDD.checkLogin(login, senha)) {	
+				if (conexaoBDD.checkLogin(txtLogin.getText(), new String(txtSenha.getPassword()))){
+				{	
 					JOptionPane.showMessageDialog(null, "Bem vindo ao sistema! ");
 				}
-				else {
+				}
+				else{
+				{
 					JOptionPane.showMessageDialog(null, "Dados incorretos");
+				}
 				}
 			}
 		});
@@ -102,7 +104,7 @@ public class ViewLogin {
 		btnNewButton_1 = new JButton("Cadastro");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (conexaoBDD.checkAdmin(login, senha)) {
+				if (conexaoBDD.checkAdmin(txtLogin.getText(), new String(txtSenha.getPassword()))) {
 				}
 				
 			}
@@ -110,5 +112,5 @@ public class ViewLogin {
 		});
 		btnNewButton_1.setBounds(285, 305, 119, 50);
 		loginPanel.add(btnNewButton_1);
-	}	
+}
 }

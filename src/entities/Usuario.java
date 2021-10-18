@@ -2,22 +2,32 @@ package entities;
 
 public class Usuario {
 	
-	private String nome;
+	private int id;
+	private String usuario;
 	private String login;
 	private String senha;
 	
-	public Usuario (String nome, String login, String senha) {
-		this.nome = nome;
+	public Usuario (int id, String usuario, String login, String senha) {
+		this.id = id;
+		this.usuario = usuario;
 		this.login = login;
 		this.senha = senha;
 	}
 	
-	public String getNome() {
-		return nome;
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getUsuario() {
+		return usuario;
 	}
 	
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setusuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getLogin() {
@@ -34,6 +44,16 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public String toString() {
+		return "Id: "
+				+ id
+				+ " Usuário: "
+				+ usuario
+				+ " Login: "
+				+ login;
+		
 	}
 	
 }
