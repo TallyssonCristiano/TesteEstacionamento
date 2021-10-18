@@ -1,13 +1,13 @@
 package application;
 
 
-import statement.ConexaoBancoDeDados2;
+import statement.ConexaoBancoDeDados;
 
 public class SistemaEstacionamento {
 
 	public static void main(String[] args) {
 
-		ConexaoBancoDeDados2 conexaoBDD = new ConexaoBancoDeDados2();
+		ConexaoBancoDeDados conexaoBDD = new ConexaoBancoDeDados();
 		String login1 = "tallysson";
 		String senha1 = "123";
 

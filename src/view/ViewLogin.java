@@ -10,7 +10,7 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import statement.ConexaoBancoDeDados2;
+import statement.ConexaoBancoDeDados;
 
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
@@ -54,7 +54,7 @@ public class ViewLogin {
 	 */
 	private void initialize() {
 		
-		ConexaoBancoDeDados2 conexaoBDD = new ConexaoBancoDeDados2();
+		ConexaoBancoDeDados conexaoBDD = new ConexaoBancoDeDados();
 		
 		frmEstacionamentoTruepark = new JFrame();
 		frmEstacionamentoTruepark.setTitle("Estacionamento TruePark");
